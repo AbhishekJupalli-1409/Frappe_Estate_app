@@ -2,7 +2,7 @@
  "_comments": "[{\"comment\": \"<div class=\\\"ql-editor read-mode\\\"><p>hi test for Frappe 15</p></div>\", \"by\": \"jupalliabhishek1409@gmail.com\", \"name\": \"15nfuhda5f\"}, {\"comment\": \"<div class=\\\"ql-editor read-mode\\\"><p>http://localhost:8000/app/doctype/Property#communication-15nf...\", \"by\": \"jupalliabhishek1409@gmail.com\", \"name\": \"p46kttp0ee\"}]",
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{PTY}-{######}",
+ "autoname": "format:{######}",
  "creation": "2025-02-01 20:54:36.945107",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -11,6 +11,8 @@
   "property_name",
   "address",
   "property_type",
+  "property_price",
+  "discount",
   "column_break_mjre",
   "image",
   "agent",
@@ -19,7 +21,9 @@
   "section_break_cqvi",
   "description",
   "amenities_section_section",
-  "amenities"
+  "amenities",
+  "pricing_section",
+  "grand_total"
  ],
  "fields": [
   {
@@ -55,9 +59,12 @@
    "options": "Agent"
   },
   {
+   "fetch_from": "agent.agent_name",
+   "fetch_if_empty": 1,
    "fieldname": "agent_name",
    "fieldtype": "Read Only",
-   "label": "Agent Name"
+   "label": "Agent Name",
+   "options": "Agent"
   },
   {
    "fieldname": "status",
@@ -95,12 +102,34 @@
   {
    "fieldname": "section_break_cqvi",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "property_price",
+   "fieldtype": "Currency",
+   "label": "Property Price",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Percent",
+   "label": "Discount"
+  },
+  {
+   "fieldname": "pricing_section",
+   "fieldtype": "Section Break",
+   "label": "Pricing"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total"
   }
  ],
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-02 17:49:50.767809",
+ "modified": "2025-02-02 20:03:26.447641",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Property",

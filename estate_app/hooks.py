@@ -137,34 +137,39 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+    "Property": {
+        #  "validate": "estate_app.estate_app.doctype.property.events.validate",
+        "on_update": "estate_app.estate_app.doctype.property.events.on_update",
+        "after_insert": "estate_app.estate_app.doctype.property.events.after_insert",
+    }
+}
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"estate_app.tasks.all"
-# 	],
-# 	"daily": [
-# 		"estate_app.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"estate_app.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"estate_app.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"estate_app.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"all": [
+		"estate_app.tasks.all"
+	],
+	"daily": [
+		"estate_app.tasks.daily"
+	],
+	"hourly": [
+		"estate_app.tasks.hourly"
+	],
+	"weekly": [
+		"estate_app.tasks.weekly"
+	],
+	"monthly": [
+		"estate_app.tasks.monthly"
+	],
+}
 
 # Testing
 # -------

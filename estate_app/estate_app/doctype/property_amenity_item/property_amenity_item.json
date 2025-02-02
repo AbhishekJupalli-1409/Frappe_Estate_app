@@ -6,19 +6,27 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "amenity"
+  "amenity",
+  "amenity_price"
  ],
  "fields": [
   {
    "fieldname": "amenity",
    "fieldtype": "Data",
+   "in_standard_filter": 1,
    "label": "Amenity",
    "unique": 1
+  },
+  {
+   "fieldname": "amenity_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amenity Price"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-02 17:29:10.507828",
+ "modified": "2025-02-02 20:12:34.845807",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Property Amenity Item",
