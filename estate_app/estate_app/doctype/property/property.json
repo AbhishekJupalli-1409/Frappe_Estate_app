@@ -1,0 +1,130 @@
+{
+ "_comments": "[{\"comment\": \"<div class=\\\"ql-editor read-mode\\\"><p>hi test for Frappe 15</p></div>\", \"by\": \"jupalliabhishek1409@gmail.com\", \"name\": \"15nfuhda5f\"}, {\"comment\": \"<div class=\\\"ql-editor read-mode\\\"><p>http://localhost:8000/app/doctype/Property#communication-15nf...\", \"by\": \"jupalliabhishek1409@gmail.com\", \"name\": \"p46kttp0ee\"}]",
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{PTY}-{######}",
+ "creation": "2025-02-01 20:54:36.945107",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "property_section",
+  "property_name",
+  "address",
+  "property_type",
+  "column_break_mjre",
+  "image",
+  "agent",
+  "agent_name",
+  "status",
+  "section_break_cqvi",
+  "description",
+  "amenities_section_section",
+  "amenities"
+ ],
+ "fields": [
+  {
+   "fieldname": "property_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Property Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "property_type",
+   "fieldtype": "Link",
+   "label": "Property Type",
+   "options": "Property Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image",
+   "reqd": 1
+  },
+  {
+   "fieldname": "agent",
+   "fieldtype": "Link",
+   "label": "Agent",
+   "options": "Agent"
+  },
+  {
+   "fieldname": "agent_name",
+   "fieldtype": "Read Only",
+   "label": "Agent Name"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nSale\nRent\nLease",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "amenities_section_section",
+   "fieldtype": "Section Break",
+   "label": "Amenities Section"
+  },
+  {
+   "fieldname": "amenities",
+   "fieldtype": "Table",
+   "label": "Amenities",
+   "options": "Property Amenity Detail"
+  },
+  {
+   "fieldname": "property_section",
+   "fieldtype": "Section Break",
+   "label": "Property"
+  },
+  {
+   "fieldname": "column_break_mjre",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_cqvi",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-02 17:49:50.767809",
+ "modified_by": "Administrator",
+ "module": "Estate App",
+ "name": "Property",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "property_name",
+ "track_changes": 1
+}
