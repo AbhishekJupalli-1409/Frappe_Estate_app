@@ -167,7 +167,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-02-03 12:32:26.039104",
+ "modified": "2025-02-03 12:55:14.918506",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Estate App",
@@ -194,7 +194,7 @@
  ],
  "restrict_to_domain": "",
  "roles": [],
- "sequence_id": 1.0,
+ "sequence_id": 2.0,
  "shortcuts": [
   {
    "doc_view": "",

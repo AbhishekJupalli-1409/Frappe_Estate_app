@@ -40,6 +40,15 @@
     </style>
 
     <!--Frappe resources HEAD-->
+    <link rel="icon" href="/assets/erpnext/images/erpnext-favicon.svg" type="image/x-icon">
+    <link type="text/css" rel="stylesheet" href="{{ bundled_asset('desk.bundle.css') }}">
+    
+  
+    <link type="text/css" rel="stylesheet" href="{{ bundled_asset('erpnext.bundle.css') }}">
+
+
+
+
     <script>
       window.frappe = {};
       frappe.ready_events = [];
@@ -51,15 +60,7 @@
       window.show_language_picker = {{ show_language_picker or 'false' }};
   </script>
     <!--Frappe resources HEAD-->
-
-
-
-    <link rel="shortcut icon" href="/assets/erpnext/images/erpnext-favicon.svg" type="image/x-icon">
-		<link rel="icon" href="/assets/erpnext/images/erpnext-favicon.svg" type="image/x-icon">
-		<link type="text/css" rel="stylesheet" href="/assets/frappe/dist/css/desk.bundle.FEZY4UF2.css">
-    <link type="text/css" rel="stylesheet" href="/assets/frappe/dist/css/report.bundle.THND46EM.css">
-    <link type="text/css" rel="stylesheet" href="/assets/erpnext/dist/css/erpnext.bundle.D76DFYTD.css">
-	
+   
 
 
     
@@ -227,17 +228,24 @@
 <!--Frappe Resources-->
 
 	
-<script type="text/javascript" src="/assets/frappe/dist/js/libs.bundle.6XLVBACU.js"></script>	
-<script type="text/javascript" src="/assets/frappe/dist/js/desk.bundle.U4K4QUX2.js"></script>
- <!--<-script type="text/javascript" src="/assets/frappe/dist/js/list.bundle.6HOQ2IQS.js"></script>-->
-<!--<script type="text/javascript" src="/assets/frappe/dist/js/form.bundle.2H2D2QDM.js"></script>-->
-<script type="text/javascript" src="/assets/frappe/dist/js/controls.bundle.QOJ66IF4.js"></script>
-<sript type="text/javascript" src="/assets/frappe/dist/js/report.bundle.VQNZSKPV.js"></script>
-<script type="text/javascript" src="/assets/frappe/dist/js/telemetry.bundle.D5NSGVQ2.js"></script>
-<script type="text/javascript" src="/assets/erpnext/dist/js/erpnext.bundle.NIHLG6Q7.js"></script>
 
 
+<script type="text/javascript" src="{{ bundled_asset('libs.bundle.js') }}"></script>
 
+	
+<script type="text/javascript" src="{{ bundled_asset('desk.bundle.js') }}"></script>
+
+<!--<script type="text/javascript" src="/assets/frappe/dist/js/list.bundle.TG6RAEQS.js"></script>
+
+<script type="text/javascript" src="/assets/frappe/dist/js/form.bundle.XRRCUHPT.js"></script>-->
+
+<script type="text/javascript" src="{{ bundled_asset('controls.bundle.js') }}"></script>
+
+<script type="text/javascript" src="{{ bundled_asset('telemetry.bundle.js') }}"></script>
+
+<script type="text/javascript" src="{{ bundled_asset('billing.bundle.js') }}"></script>
+
+<script type="text/javascript" src="{{ bundled_asset('erpnext.bundle.js') }}"></script> 
 
 <script>frappe.csrf_token = "{{frappe.session.csrf_token}}";</script>
   

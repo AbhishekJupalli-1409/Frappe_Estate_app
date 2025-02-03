@@ -163,6 +163,7 @@ frappe.ui.form.on('Property Amenity Detail', {
 		console.log(row); //row.amenity //getting this amenity from table and verifying it with property doctype getting the table value
 		frm.check_for_amenity_duplicates(frm, row);
 		frm.compute_total(frm, row);
+		frm.copy_discount(frm);
 
 	},
 	//writing above code in child doctype Property Amenity Detail
