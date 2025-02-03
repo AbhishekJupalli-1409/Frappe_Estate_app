@@ -69,36 +69,6 @@ frappe.ui.form.on('Property', {
 			);
 			frm.refresh_field('amenities');
 		};
-
-
-	},
-
-
-
-
-
-	refresh: function (frm) {
-		// frm.add_custom_button('say hi', ()=> {
-		// 	console.log('hello');
-		// 	},"Action");
-		// frm.add_custom_button('ping', ()=> {
-		// 	console.log('ping');
-		// 	},"Action");
-		// frm.add_custom_button('pong', ()=> {
-		// 	console.log('pong');
-		// 	},"Action");
-		// frm.add_custom_button('saved msg', ()=> {
-		// 	// frappe.msgprint('Document Saved');
-		// 	frappe.prompt('address', ({ value }) => {
-		// 		frm.set_value('address', value); // this only saved in the html page not in the database
-		// 		frm.refresh_field('address'); 
-		// 		frappe.msgprint(`Address saved to ${value}`);
-		// 	})
-
-		// 	});
-
-
-
 		//Check property type and show/hide fields
 		frm.add_custom_button('Check Similar properties', () => {
 
@@ -130,7 +100,43 @@ frappe.ui.form.on('Property', {
 			console.log('hello');
 		}, "Action");
 
+
+
 	},
+
+
+
+
+
+	refresh: function (frm) {
+		// frm.add_custom_button('say hi', ()=> {
+		// 	console.log('hello');
+		// 	},"Action");
+		// frm.add_custom_button('ping', ()=> {
+		// 	console.log('ping');
+		// 	},"Action");
+		// frm.add_custom_button('pong', ()=> {
+		// 	console.log('pong');
+		// 	},"Action");
+		// frm.add_custom_button('saved msg', ()=> {
+		// 	// frappe.msgprint('Document Saved');
+		// 	frappe.prompt('address', ({ value }) => {
+		// 		frm.set_value('address', value); // this only saved in the html page not in the database
+		// 		frm.refresh_field('address'); 
+		// 		frappe.msgprint(`Address saved to ${value}`);
+		// 	})
+
+		// 	});
+
+
+
+		
+	},
+
+
+
+
+
 	//this is the code for the property price if it edited the grand total should be updated and also for the discount
 	property_price: function (frm) {
 		frm.compute_total(frm);

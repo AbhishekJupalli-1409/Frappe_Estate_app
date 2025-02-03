@@ -7,10 +7,10 @@ from estate_app.utils import sendmail
 
 def on_update(doc, event):
     print(f"\n\n\n{doc.name} Property updated by {doc.owner}\n\n\n")
-    frappe.msgprint(f"{doc.name} Property updatfed by {doc.owner}")
+    frappe.msgprint(f"{doc.name} Property updated by {doc.owner}")
 
  
-def after_insert(doc, event): # if it is already in db this wont activate
+def after_insert(doc, event): # if it is already in db this wont activate/ Only when inserted in db triggers
     #create a note on property insert
     note = frappe.get_doc({
         'doctype': 'Note',
@@ -34,7 +34,7 @@ def after_insert(doc, event): # if it is already in db this wont activate
     agent = frappe.get_doc('Agent', doc.agent)
     if not agent.email:
         frappe.throw(f"Agent email for {doc.agent} not found.")
-    msg = f"Hello, {agent.agent_name} <b>has been added on your behalf</b>"
+    msg = f"Hello, <b> {agent.agent_name} </b> the property <b> {doc.name} </b> has been assigned to You."
     print(f"\n\n\n{doc.name} Property updated by {doc.owner} and {msg}\n\n\n")
     attachments = [frappe.attach_print(doc.doctype, doc.name, file_name=doc.name)]
     sendmail(doc, [agent.email, 'jupalliabhishek1409@gmail.com'], msg, 'New Property Added', attachments)
