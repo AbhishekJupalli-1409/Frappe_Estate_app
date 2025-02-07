@@ -1,5 +1,4 @@
 {
- "_comments": "[{\"comment\": \"<div class=\\\"ql-editor read-mode\\\"><p>hi test for Frappe 15</p></div>\", \"by\": \"jupalliabhishek1409@gmail.com\", \"name\": \"15nfuhda5f\"}, {\"comment\": \"<div class=\\\"ql-editor read-mode\\\"><p>http://localhost:8000/app/doctype/Property#communication-15nf...\", \"by\": \"jupalliabhishek1409@gmail.com\", \"name\": \"p46kttp0ee\"}]",
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:{######}",
@@ -13,6 +12,7 @@
   "property_type",
   "property_price",
   "discount",
+  "city",
   "column_break_mjre",
   "image",
   "agent",
@@ -124,12 +124,19 @@
    "fieldname": "grand_total",
    "fieldtype": "Currency",
    "label": "Grand Total"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Link",
+   "label": "City",
+   "options": "City",
+   "reqd": 1
   }
  ],
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-02 20:03:26.447641",
+ "modified": "2025-02-07 17:53:41.101281",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Property",

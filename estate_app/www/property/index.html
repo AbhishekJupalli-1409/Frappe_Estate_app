@@ -41,13 +41,14 @@
       <form class="form-search col-md-12" style="margin-top: -100px;">
         <div class="row  align-items-end">
           <div class="col-md-3">
-            <label for="list-types">Listing Types</label>
+            <label for="list-types">Property Types</label>
             <div class="select-wrap">
               <span class="icon icon-arrow_drop_down"></span>
-              <select name="list-types" id="list-types" class="form-control d-block rounded-0">
-                <option value="">Condo</option>
-                <option value="">Commercial Building</option>
-                <option value="">Land Property</option>
+              <select name="type" id="list-types" class="form-control d-block rounded-0">
+                {%for type in types%}
+                <option value="{{type.name}}">{{type.name}}</option>
+                {%endfor%}
+
               </select>
             </div>
           </div>
@@ -55,10 +56,10 @@
             <label for="offer-types">Offer Type</label>
             <div class="select-wrap">
               <span class="icon icon-arrow_drop_down"></span>
-              <select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
-                <option value="">For Sale</option>
-                <option value="">For Rent</option>
-                <option value="">For Lease</option>
+              <select name="status" id="offer-types" class="form-control d-block rounded-0">
+                <option value="Sale">Sale</option>
+                <option value="Rent">Rent</option>
+                <option value="Lease">Lease</option>
               </select>
             </div>
           </div>
@@ -66,12 +67,11 @@
             <label for="select-city">Select City</label>
             <div class="select-wrap">
               <span class="icon icon-arrow_drop_down"></span>
-              <select name="select-city" id="select-city" class="form-control d-block rounded-0">
-                <option value="">New York</option>
-                <option value="">Brooklyn</option>
-                <option value="">London</option>
-                <option value="">Japan</option>
-                <option value="">Philippines</option>
+              <select name="city" id="select-city" class="form-control d-block rounded-0">
+                {%for city in cities%}
+                <option value="{{city.name}}">{{city.name}}</option>
+                {%endfor%}
+
               </select>
             </div>
           </div>
@@ -170,13 +170,13 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <div class="site-pagination">
-          <a href="index.html#" class="active">1</a>
-          <a href="index.html#">2</a>
-          <a href="index.html#">3</a>
-          <a href="index.html#">4</a>
-          <a href="index.html#">5</a>
-          <span>...</span>
-          <a href="index.html#">10</a>
+          {%if prev%}
+          <a href="/?page={{prev}}" class="active">prev</a>
+          {%endif%}
+          {%if next%}
+          <a href="/?page={{next}}">next</a>
+          {%endif%}
+
         </div>
       </div>  
     </div>
