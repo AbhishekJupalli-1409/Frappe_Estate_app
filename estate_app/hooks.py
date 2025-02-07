@@ -156,7 +156,7 @@ doc_events = {
     "Property": {
         #  "validate": "estate_app.estate_app.doctype.property.events.validate",
         "on_update": "estate_app.estate_app.doctype.property.events.on_update",
-        "after_insert": "estate_app.estate_app.doctype.property.events.after_insert",
+        # "after_insert": "estate_app.estate_app.doctype.property.events.after_insert",
     }
 }
 
