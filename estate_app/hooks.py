@@ -1,8 +1,8 @@
-
 from __future__ import unicode_literals
 from . import __version__ as app_version
-from estate_app.route import routes
-
+from .route import routes
+from .jinja import jenvs
+from .doc_events import doc_events
 
 app_name = "estate_app"
 app_title = "Estate App"
@@ -10,6 +10,11 @@ app_publisher = "Abhishek Jupalli(abhi)"
 app_description = "A stock app "
 app_email = "jupalliabhishek1409@gmail.com"
 app_license = "mit"
+
+
+# putting all the configurations in the hooks.py file is bad practice
+# Hard to read and hard to find the error in the code
+
 
 # Apps
 # ------------------
@@ -73,6 +78,7 @@ app_license = "mit"
 
 website_route_rules = routes
     
+jinja = jenvs
 
 # Generators
 # ----------
@@ -147,19 +153,7 @@ website_route_rules = routes
 # ---------------
 # Hook on document methods and events
 
-doc_events = {
-	# "*": {
-	# 	"on_update": "method",
-	# 	"on_cancel": "method",
-	# 	"on_trash": "method"
-	# }
-    "Property": {
-        #  "validate": "estate_app.estate_app.doctype.property.events.validate",
-        "on_update": "estate_app.estate_app.doctype.property.events.on_update",
-        # "after_insert": "estate_app.estate_app.doctype.property.events.after_insert",
-    }
-}
-
+doc_events = doc_events
 # Scheduled Tasks
 # ---------------
 
