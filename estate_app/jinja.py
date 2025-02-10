@@ -12,16 +12,15 @@ jenvs = {
 }
 
 
-
 def property_in_btc(price):
     cur = currency("INR")
-    btc_value = float(price)/cur
-    return f"BTC - {btc_value:.8f}"
+    return f"BTC {float(price)/cur}"
 
 def exp(num):
     return float(num)**2
 
-def add(v1, v2):
-    if (v1 + v2) % 2 == 0:
+
+def add(v1,v2):
+    if (v1+ v2)%2==0:
         return int(v1) + int(v2)
     return float(v1) + float(v2)
