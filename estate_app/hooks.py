@@ -14,7 +14,7 @@ app_license = "mit"
 
 # putting all the configurations in the hooks.py file is bad practice
 # Hard to read and hard to find the error in the code
-
+# added a comment
 
 # Apps
 # ------------------
