@@ -1,2 +1,0 @@
-frappe
-bitcoin-value
