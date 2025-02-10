@@ -80,7 +80,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install -r requirements.txt
+        
           pip install bitcoin-value  # Ensure bitcoin_value is installed
 
       - name: Setup
