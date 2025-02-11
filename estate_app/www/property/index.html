@@ -170,12 +170,14 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <div class="site-pagination">
-          {%if prev%}
-          <a href="/?page={{prev}}" class="active">prev</a>
-          {%endif%}
-          {%if next%}
-          <a href="/?page={{next}}">next</a>
-          {%endif%}
+          {% if search %}
+          <a href="{% if prev %}/?page={{ prev }}&type={{type}}&status={{status}}&city={{city}}{% endif %}" class="{% if prev %}active{% else %}disabled{% endif %}" {% if not prev %}disabled{% endif %}{% if not prev %}style="border: 1px solid transparent"{% endif %}>prev</a>
+          <a href="{% if next %}/?page={{ next }}&type={{type}}&status={{status}}&city={{city}}{% endif %}" class="{% if next %}active{% else %}disabled{% endif %}" {% if not next %}disabled{% endif %}{% if not next %}style="border: 1px solid transparent"{% endif %}>next</a>
+        {% else %}
+          <a href="{% if prev %}/?page={{ prev }}{% endif %}" class="{% if prev %}active{% else %}disabled{% endif %}" {% if not prev %}disabled{% endif %}{% if not prev %}style="border: 1px solid transparent"{% endif %}>prev</a>
+          <a href="{% if next %}/?page={{ next }}{% endif %}" class="{% if next %}active{% else %}disabled{% endif %}" {% if not next %}disabled{% endif %}{% if not next %}style="border: 1px solid transparent"{% endif %}>next</a>
+      
+        {% endif %}
 
         </div>
       </div>  
