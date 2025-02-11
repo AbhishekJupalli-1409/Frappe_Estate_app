@@ -133,7 +133,7 @@
             <a href="index.html#" class="property-favorite"><span class="icon-heart-o"></span></a>
             <h2 class="property-title"><a href="/property/detail/{{property.name}}">{{property.property_name}}</a></h2>
             <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> {{property.address}}</span>
-            <strong class="property-price text-primary mb-3 d-block text-success">INR - {{ frappe.format(property.grand_total, {'fieldtype': 'Currency'}) }}   <br> {{property_in_btc(property.grand_total)}}</strong>
+            <strong class="property-price text-primary mb-3 d-block text-success">{{ frappe.format(property.grand_total, {'fieldtype': 'Currency'}) }}</strong>
            <!-- <ul class="property-specs-wrap mb-3 mb-lg-0">
               <li>
                 <span class="property-specs">Beds</span>
@@ -170,15 +170,13 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <div class="site-pagination">
-          {% if search %}
-            <a href="{% if prev %}/?page={{ prev }}&type={{type}}&status={{status}}&city={{city}}{% endif %}" class="{% if prev %}active{% else %}disabled{% endif %}" {% if not prev %}disabled{% endif %}{% if not prev %}style="border: 1px solid transparent"{% endif %}>prev</a>
-            <a href="{% if next %}/?page={{ next }}&type={{type}}&status={{status}}&city={{city}}{% endif %}" class="{% if next %}active{% else %}disabled{% endif %}" {% if not next %}disabled{% endif %}{% if not next %}style="border: 1px solid transparent"{% endif %}>next</a>
-          {% else %}
-            <a href="{% if prev %}/?page={{ prev }}{% endif %}" class="{% if prev %}active{% else %}disabled{% endif %}" {% if not prev %}disabled{% endif %}{% if not prev %}style="border: 1px solid transparent"{% endif %}>prev</a>
-            <a href="{% if next %}/?page={{ next }}{% endif %}" class="{% if next %}active{% else %}disabled{% endif %}" {% if not next %}disabled{% endif %}{% if not next %}style="border: 1px solid transparent"{% endif %}>next</a>
-        
-          {% endif %}
-          
+          {%if prev%}
+          <a href="/?page={{prev}}" class="active">prev</a>
+          {%endif%}
+          {%if next%}
+          <a href="/?page={{next}}">next</a>
+          {%endif%}
+
         </div>
       </div>  
     </div>
