@@ -58,10 +58,10 @@
               <div class="row mb-5">
                 <div class="col-md-6 col-lg-3 text-center border-bottom border-top py-3 ">
                   <span class="d-inline-block text-black mb-0 caption-text">Property Code</span>
-                  <strong class="d-block">{{property.name}}</strong>
+                  <strong class="d-block" id="property-name">{{property.name}}</strong>
                 </div>
                 <div class="col-md-6 col-lg-3 text-center border-bottom border-top py-3">
-                  <span class="d-inline-block text-black mb-0 caption-text">PRoperty Type</span>
+                  <span class="d-inline-block text-black mb-0 caption-text">Property Type</span>
                   <strong class="d-block">{{property.property_type}}</strong>
                 </div>
                 <div class="col-md-6 col-lg-3 text-center border-bottom border-top py-3">
@@ -157,7 +157,7 @@
                   <input type="text" id="phone" class="form-control" disabled value="{{agent.phone}}">
                 </div>
                 <div class="form-group">
-                  <input type="submit" id="phone" class="btn btn-primary" value="Send Message">
+                  <input type="button" id="contact-agent" class="btn btn-primary" value="Contact Agent">
                 </div>
               </form>
             </div>
@@ -222,3 +222,8 @@
         </div>
       </div>
 {% endblock %}
+
+
+{%block script%}
+<script src="/assets/estate_app/www/js/detail.js"></script> 
+{%endblock%}
