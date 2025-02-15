@@ -12,7 +12,7 @@ def sendmail(doc, recipients, msg, title, attachment=None):
         email_args["attachments"] = attachment
     frappe.enqueue(method=frappe.sendmail, queue='short', timeout=300, **email_args)
 
-def paginate(doctype, page=0,conditions=" ", paginate_by=6):
+def paginate(doctype, page=0,conditions=" ", paginate_by=9):
     prev, next,search = 0, 0,False
     query = f"""SELECT creation, name, property_name, status, address, grand_total, image FROM `tab{doctype}` {conditions} ORDER BY creation DESC"""
     

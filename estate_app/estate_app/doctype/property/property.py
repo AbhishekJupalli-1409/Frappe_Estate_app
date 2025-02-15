@@ -11,9 +11,14 @@ from frappe.model.document import Document
 #         frappe.msgprint(('Document updated successfully'))
 
 class Property(Document):
-    pass
-    # def validate(self):
-    #     frappe.throw((f'you are not allowed to save <b>{self.name}</b>'))
+    def validate(self):
+        amenity_prices = 0
+        for i in self.amenities:
+            amenity_prices += i.amenity_price
+        discount = self.discount if self.discount else 0
+        self.grand_total = self.property_price + amenity_prices - (self.property_price * discount / 100)
+
+
 
 # Write a condition for if property type = flat and amenities = Outdoor Kitchen then throw error
 
