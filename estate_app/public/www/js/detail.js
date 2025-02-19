@@ -1,4 +1,4 @@
-
+console.log("detail.js loaded");
 document.querySelector('#contact-agent').addEventListener('click',
     (e)=>{
         
@@ -30,7 +30,7 @@ document.querySelector('#contact-agent').addEventListener('click',
                 console.log(values);
                 values.agent_email = agent_email;
                 values.property_code = property_code;
-
+                console.log(values);
                 
                 // API CALL
                 frappe.call({

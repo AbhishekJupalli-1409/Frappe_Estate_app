@@ -1,36 +1,18 @@
 import frappe
 
-from estate_app.utils import sendmail
-
-#(doc, recipients, msg, title, attachment=None)
-
-
-
-@frappe.whitelist()
-def contact_agent(**args):
-    print(f"\n\n\n\n{args}\n\n\n")
-    doc=frappe.get_doc('Property',args.get('property_code'))
-    msg = f"From: {args.get('name')} <br> Email: {args.get('email')} <br>{args.get('message')}"
-    attachments = [frappe.attach_print(doc,doc.doctype,file_name=doc.name) ]
-    sendmail(doc,[args.get('agent_email')],msg,"Property Inquiry",attachments)
-    return "Mesaage Sent Successfully.You will be contacted soon by the agent<br> Thank you for contacting us"
-    
-
-
 
 @frappe.whitelist(allow_guest=True)
-def order_item(**args):
+def order():
     try:
     # Get request data (handle both JSON and form data)
         if frappe.request.method == "POST":
-            print(f"\n\n\n\n{args}\n\n\n")
             data = frappe.form_dict  # For form-urlencoded requests
             item = data.form_dict.get("item")
             name = data.form_dict.get("name")
             email = data.form_dict.get("email")
             number = data.form_dict.get("number")
             address = data.form_dict.get("address")
-            print(f"\n\n\n\n{data}\n\n\n")
+
             if not name or not email:
                 frappe.local.response.http_status_code = 400
                 return {"message": "Name and email are required!", "status": "error"}
