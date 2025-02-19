@@ -2,7 +2,7 @@ console.log('order.js loaded');
 document.querySelector('#order-item').addEventListener('click', (e)=> {
     console.log('order-item clicked');
     
-    let item = document.querySelector('#order-item').value;
+    let item = document.querySelector('#item').value;
     let name = document.querySelector('#name').value;
     let email = document.querySelector('#email').value;
     let number = document.querySelector('#number').value;

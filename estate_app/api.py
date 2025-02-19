@@ -48,7 +48,7 @@ def order_item(**args):
                 "address":address,
             }).insert(ignore_permissions=True)
 
-        return {"message": f"Thank you, {name}. Your message has been received!", "status": "success"}
+        return {"message": f"Thank you, {name}. Your order has been placed!", "status": "success"}
     except Exception as e:
         frappe.local.response.http_status_code = 500
         return {"message": f"Server Error: {str(e)}", "status": "error"}
