@@ -19,7 +19,7 @@ document.querySelector('#order-item').addEventListener('click', (e)=> {
         args: { item,name, email,number,address },
         callback: function(response) {
             if (response.message.status === "success") {
-                alert(response.message.message);
+                frappe.msgprint(response.message.message);
             } else {
                 console.log(response)
                 alert("Error: " + response.message.message);

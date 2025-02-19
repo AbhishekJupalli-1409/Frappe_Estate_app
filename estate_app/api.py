@@ -25,12 +25,15 @@ def order_item(**args):
         if frappe.request.method == "POST":
             print(f"\n\n\n\n{args}\n\n\n")
             data = frappe.form_dict  # For form-urlencoded requests
-            item = data.form_dict.get("item")
-            name = data.form_dict.get("name")
-            email = data.form_dict.get("email")
-            number = data.form_dict.get("number")
-            address = data.form_dict.get("address")
+            item = args.get("item")
+            name = args.get("name")
+            email = args.get("email")
+            number = args.get("number")
+            address = args.get("address")
             print(f"\n\n\n\n{data}\n\n\n")
+            print(f"\n\n\n\n{item}\n\n\n")
+            print(f"\n\n\n\n{name}\n\n\n")
+            print(f"\n\n\n\n{email}\n\n\n")
             if not name or not email:
                 frappe.local.response.http_status_code = 400
                 return {"message": "Name and email are required!", "status": "error"}
@@ -39,7 +42,7 @@ def order_item(**args):
             frappe.get_doc({
                 "doctype": "Orders",
                 "item":item,
-                "name1": name,  # 'name1' to avoid conflicts with DocType 'name'
+                "name1": name,  
                 "email": email,
                 "number":number,
                 "address":address,
