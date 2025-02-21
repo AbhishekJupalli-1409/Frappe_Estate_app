@@ -11,7 +11,8 @@
   "name1",
   "email",
   "number",
-  "address"
+  "address",
+  "amended_from"
  ],
  "fields": [
   {
@@ -52,11 +53,22 @@
    "fieldtype": "Data",
    "label": "Address",
    "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Orders",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2025-02-19 14:34:09.883779",
+ "modified": "2025-02-21 11:28:17.881421",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Orders",
