@@ -47,14 +47,148 @@ MyPage = Class.extend({
 				
 		}
 
+		// Line chart 
+		let line_chart = function(){
+			const data = {
+				labels: ["12am-3am", "3am-6pm", "6am-9am", "9am-12am",
+					"12pm-3pm", "3pm-6pm", "6pm-9pm", "9am-12am"
+				],
+				datasets: [
+					{
+						name: "Some Data", type: "bar",
+						values: [25, 40, 30, 35, 8, 52, 17, -4]
+					},
+					{
+						name: "Another Set", type: "line",
+						values: [25, 50, -10, 15, 18, 32, 27, 14]
+					}
+				]
+			}
+			
+			const chart = new frappe.Chart("#line_chart", {  // or a DOM element,
+														// new Chart() in case of ES6 module with above usage
+				title: "Line Chart",
+				data: data,
+				type: 'axis-mixed', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+				height: 250,
+				colors: ['#7cd6fd', '#743ee2']
+			})
+		};
+
+		//Pie chart
+		let pie_chart = function(){
+			const data = {
+				labels: ["12am-3am", "3am-6pm", "6am-9am", "9am-12am",
+					"12pm-3pm", "3pm-6pm", "6pm-9pm", "9am-12am"
+				],
+				datasets: [
+					{
+						name: "Some Data", type: "bar",
+						values: [25, 40, 30, 35, 8, 52, 17, -4]
+					},
+					{
+						name: "Another Set", type: "line",
+						values: [25, 50, -10, 15, 18, 32, 27, 14]
+					}
+				],
+				yMarkers: [{ label: "Marker", value: 180000000,
+					options: { labelPos: 'left' }}],
+				yRegions: [{ label: "Region", start: 0,
+					end: 300000000,
+					options: { labelPos: 'right' }}]
+				
+			}
+			
+			const chart = new frappe.Chart("#pie_chart", {  // or a DOM element,
+														// new Chart() in case of ES6 module with above usage
+				title: "Pie Chart",
+				data: data,
+				type: 'pie', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+				height: 450,
+				colors: ['#7cd6fd', '#743ee2']
+			})
+		};
+
+		//Get status by AJAX Call
+		let statuses = [];
+		let prices = [];
+
+		let status = function(){
+			frappe.call({
+				method: "estate_app.estate_app.page.estate.estate.get_property_price_by_status", //dotted path to server method
+				callback: function(r) {
+				// code snippet
+				console.log(r.message);
+				statuses = [];
+				prices = [];
+				r.message.forEach((element) => {
+					statuses.push(element[0]);
+					prices.push(element[1]);
+				});
+				console.log(statuses,prices);
+				const data = {
+					labels: statuses,
+					datasets: [
+						{
+							name: statuses[0], type: "bar",
+							values:[prices[0],0,0]
+						},
+						{
+							name: statuses[1], type: "bar",
+							values: [0,prices[1],0]
+						},
+						{
+							name: 	statuses[2], type: "bar",
+							values: [0,0,prices[2]]
+						}
+					],
+					yMarkers: [{ label: "Marker", value: 180000000,
+						options: { labelPos: 'left' }}],
+					yRegions: [{ label: "Region", start: 0,
+						end: 250000000,
+						options: { labelPos: 'right' }}]
+				}
+	
+				const chart = new frappe.Chart("#chart", {  // or a DOM element,
+															// new Chart() in case of ES6 module with above usage
+					title: "Estate Price Chart",
+					data: data,
+					type: 'bar', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+					height: 280,
+					colors: ['#7cd6fd', '#743ee2','#43ee2'],
+					axisOptions: {
+						xAxisMode: "tick",
+						xIsSeries: true
+					  },
+					  barOptions: {
+						stacked: true,
+						spaceRatio: 0.9
+					  }
+				})
+				}
+				
+			});
+
+		}
+
+	
+
 		//Add the refresh button
-		
+
+		//Frappe chart
 
 		//Append the body to the page
 		//frappe --> pages --> page --> main in developer tools console
 		$(frappe.render_template(frappe.estate_app_page.body, this)).appendTo(this.page.main); //attach the body to main element 
 		total();//Execute the function before the refresh
+		status();
+		// page_chart(); // execute the chart after status is updated
+		line_chart();
 
+		pie_chart();
+
+
+		//Refresh button
 		$("#refresh-total").click(function(){
 			total();//Execute the function after the refresh to get new updates
 		});
@@ -69,7 +203,8 @@ MyPage = Class.extend({
 //HTML CONTENT
 
 
-body = `<div class="widget-group ">
+body = `
+<div class="widget-group ">
 	<div class="widget-group-head">
 
 		<div class="widget-group-control"></div>
@@ -172,10 +307,19 @@ body = `<div class="widget-group ">
 		</div>
 		
 	</div>
-</div>`
+</div>
+
+<div id="chart"></div>
+<hr style="border: 1px solid #808080; width: 100%; margin: 20px auto;">
+<div id="line_chart"></div>
+<hr style="border: 1px solid #808080; width: 100%; margin: 20px auto;">
+<div id="pie_chart"></div>
+
+
+`
 
 
 
 frappe.estate_app_page = {
-	body: body,
+	body: body,	
 }

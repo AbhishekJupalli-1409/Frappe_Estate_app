@@ -3,6 +3,23 @@ from faker import Faker  # for generating fake data
 import frappe
 fake = Faker()
 
+
+
+def populate_agents(agent_images,fake):
+    for img in agent_images:
+        agent=frappe.get_doc({
+            "doctype":"Agent",
+            "email":fake.profile().get('mail'),
+            "agent_name":fake.profile().get('name'), 
+            "phone":fake.phone_number(),
+            "image":img
+            })
+        agent.insert(ignore_permissions=True)
+    frappe.db.commit()
+    print("Agents created successfully")
+        
+
+
 def get_agent_images():
     agent_images = []  # Define inside function to avoid global pollution
     
@@ -21,20 +38,6 @@ def get_agent_images():
 get_agent_images()
 
 
-
-def populate_agents(agent_images,fake):
-    for img in agent_images:
-        agent=frappe.get_doc({
-            "doctype":"Agent",
-            "email":fake.profile().get('mail'),
-            "agent_name":fake.profile().get('name'), 
-            "phone":fake.phone_number(),
-            "image":img
-            })
-        agent.insert(ignore_permissions=True)
-    frappe.db.commit()
-    print("Agents created successfully")
-        
 
 # Call the function to execute the script
 if __name__ == "__main__":

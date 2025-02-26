@@ -8,7 +8,7 @@ fake = Faker()
 
 
 def populate_property():
-    house_image_url = f"https://api.unsplash.com/search/photos?client_id=QbrodlqyegH5cCvmA6AgY4yiWh7c58XfWKubQgecpX4&query=pig@page=2"
+    house_image_url = f"https://api.unsplash.com/search/photos?client_id=QbrodlqyegH5cCvmA6AgY4yiWh7c58XfWKubQgecpX4&query=house@page=3"
     # change the page number to get more images 
     image_api = requests.get(house_image_url)
     house_image_data = image_api.json().get('results')
@@ -70,6 +70,9 @@ def populate_property():
 
                 
     print(house_images)
-    return house_images
+    return len(house_images)
 
 
+if __name__ == "__main__":
+    num_properties = populate_property()
+    print(f"{num_properties} agent images fetched and agents created.")
