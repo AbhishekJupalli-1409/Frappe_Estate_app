@@ -47,6 +47,10 @@ MyPage = Class.extend({
 				
 		}
 
+
+
+
+
 		// Line chart 
 		let line_chart = function(){
 			const data = {
@@ -109,9 +113,60 @@ MyPage = Class.extend({
 			})
 		};
 
+
+
 		//Get status by AJAX Call
 		let statuses = [];
 		let prices = [];
+		let lease = [];
+		let sale = [];
+		let rent = [];
+
+
+		frappe.call({
+			method: "estate_app.estate_app.page.estate.estate.get_rent", //dotted path to server method
+			callback: function(r) {
+			// code snippet
+			// console.log(r.message);
+
+			r.message.forEach((element) => {
+				rent.push(element.grand_total);
+				
+			});
+			console.log(rent);
+			}
+		});
+		frappe.call({
+			method: "estate_app.estate_app.page.estate.estate.get_sale", //dotted path to server method
+			callback: function(r) {
+			// code snippet
+			// console.log(r.message);
+			statuses = [];
+			prices = [];
+			r.message.forEach((element) => {
+				sale.push(element.grand_total);
+				
+			});
+			console.log(sale);
+			}
+		});
+		frappe.call({
+			method: "estate_app.estate_app.page.estate.estate.get_lease", //dotted path to server method
+			callback: function(r) {
+			// code snippet
+			// console.log(r.message);
+			statuses = [];
+			prices = [];
+			r.message.forEach((element) => {
+				lease.push(element.grand_total);
+
+			});
+			console.log(lease);
+			}
+		});
+
+
+
 
 		let status = function(){
 			frappe.call({
@@ -127,26 +182,22 @@ MyPage = Class.extend({
 				});
 				console.log(statuses,prices);
 				const data = {
-					labels: statuses,
+					labels: [1,2,3,4,5,6,7,8,9,10],
 					datasets: [
 						{
 							name: statuses[0], type: "bar",
-							values:[prices[0],0,0]
+							values: lease
 						},
 						{
 							name: statuses[1], type: "bar",
-							values: [0,prices[1],0]
+							values: rent
 						},
 						{
 							name: 	statuses[2], type: "bar",
-							values: [0,0,prices[2]]
+							values: sale
 						}
 					],
-					yMarkers: [{ label: "Marker", value: 180000000,
-						options: { labelPos: 'left' }}],
-					yRegions: [{ label: "Region", start: 0,
-						end: 250000000,
-						options: { labelPos: 'right' }}]
+					
 				}
 	
 				const chart = new frappe.Chart("#chart", {  // or a DOM element,
@@ -155,14 +206,10 @@ MyPage = Class.extend({
 					data: data,
 					type: 'bar', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
 					height: 280,
-					colors: ['#7cd6fd', '#743ee2','#43ee2'],
+					colors: ['#7cd6fd', '#743ee2','#433ee2'],
 					axisOptions: {
 						xAxisMode: "tick",
 						xIsSeries: true
-					  },
-					  barOptions: {
-						stacked: true,
-						spaceRatio: 0.9
 					  }
 				})
 				}
