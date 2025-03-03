@@ -32,6 +32,12 @@ app_license = "mit"
 # 	}
 # ]
 
+
+override_whitelisted_methods = {
+    "your_app.api.save_data": "your_app.api.save_data"
+}
+
+
 # Includes in <head>
 # ------------------
 

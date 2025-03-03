@@ -1,0 +1,7 @@
+{
+    "doctype": "Dashboard",
+    "module": "Estate App",
+    "charts": [],
+    "cards": [],
+    "roles": ["System Manager"]
+}

@@ -118,83 +118,126 @@ MyPage = Class.extend({
 		//Get status by AJAX Call
 		let statuses = [];
 		let prices = [];
+		let approved = 0;
+		let new_state = [];
+		let pending_approval = [];
+		let pending_review = [];
+		let rejected = [];
+
+
 		let lease = [];
 		let sale = [];
 		let rent = [];
 
 
+
+		// for the approved
 		frappe.call({
-			method: "estate_app.estate_app.page.estate.estate.get_rent", //dotted path to server method
+			method: "estate_app.estate_app.page.estate.estate.get_work_state_Approved", //dotted path to server method
 			callback: function(r) {
 			// code snippet
-			// console.log(r.message);
+			console.log(r.message);
 
-			r.message.forEach((element) => {
-				rent.push(element.grand_total);
-				
-			});
-			console.log(rent);
+			approved = r.message[0].count;
+
+			// console.log(rent);
+			
+			console.log(approved);
 			}
 		});
-		frappe.call({
-			method: "estate_app.estate_app.page.estate.estate.get_sale", //dotted path to server method
-			callback: function(r) {
-			// code snippet
-			// console.log(r.message);
-			statuses = [];
-			prices = [];
-			r.message.forEach((element) => {
-				sale.push(element.grand_total);
-				
-			});
-			console.log(sale);
-			}
-		});
-		frappe.call({
-			method: "estate_app.estate_app.page.estate.estate.get_lease", //dotted path to server method
-			callback: function(r) {
-			// code snippet
-			// console.log(r.message);
-			statuses = [];
-			prices = [];
-			r.message.forEach((element) => {
-				lease.push(element.grand_total);
 
-			});
-			console.log(lease);
+
+		// for the new state
+
+		frappe.call({
+			method: "estate_app.estate_app.page.estate.estate.get_work_state_new", //dotted path to server method
+			callback: function(r) {
+			// code snippet
+			// console.log(r.message);
+			new_state = r.message[0].count;
+			// console.log(sale);
 			}
 		});
 
 
 
+		// for the pending approval
+
+		frappe.call({
+			method: "estate_app.estate_app.page.estate.estate.get_work_state_pending_approval", //dotted path to server method
+			callback: function(r) {
+			// code snippet
+			// console.log(r.message);
+			pending_approval = r.message[0].count;
+			// console.log(lease);
+			}
+		});
+
+
+
+
+		
+		// for the pending approval
+
+		frappe.call({
+			method: "estate_app.estate_app.page.estate.estate.get_work_state_pending_approval", //dotted path to server method
+			callback: function(r) {
+			// code snippet
+			// console.log(r.message);
+			pending_approval = r.message[0].count;
+			// console.log(lease);
+			}
+		});
+
+
+
+		// for the pending review
+
+
+		frappe.call({
+			method: "estate_app.estate_app.page.estate.estate.get_work_state_pending_review", //dotted path to server method
+			callback: function(r) {
+			// code snippet
+			// console.log(r.message);
+			pending_review = r.message[0].count;
+			// console.log(lease);
+			}
+		});
+
+
+
+		// for the Rejected
+
+
+		frappe.call({
+			method: "estate_app.estate_app.page.estate.estate.get_work_state_rejected", //dotted path to server method
+			callback: function(r) {
+			// code snippet
+			// console.log(r.message);
+			rejected = r.message[0].count;
+			// console.log(lease);
+			}
+		});
 
 		let status = function(){
 			frappe.call({
-				method: "estate_app.estate_app.page.estate.estate.get_property_price_by_status", //dotted path to server method
+				method: "estate_app.estate_app.page.estate.estate.get_work_state", //dotted path to server method
 				callback: function(r) {
 				// code snippet
-				console.log(r.message);
-				statuses = [];
-				prices = [];
+				// console.log(r.message);
+				workflow = [];
+			
 				r.message.forEach((element) => {
-					statuses.push(element[0]);
-					prices.push(element[1]);
+					workflow.push(element.workflow_state);
+					
 				});
-				console.log(statuses,prices);
+				// console.log(workflow);
 				const data = {
-					labels: [1,2,3,4,5,6,7,8,9,10],
+					labels: workflow,
 					datasets: [
 						{
-							name: statuses[0], type: "bar",
-							values: lease
-						},
-						{
-							name: statuses[1], type: "bar",
-							values: rent
-						},
-						{
-							name: 	statuses[2], type: "bar",
-							values: sale
+							name: "record", type: "bar",
+							values: [approved,new_state,pending_approval,pending_review,rejected]
 						}
 					],
 					
@@ -202,11 +245,11 @@ MyPage = Class.extend({
 	
 				const chart = new frappe.Chart("#chart", {  // or a DOM element,
 															// new Chart() in case of ES6 module with above usage
-					title: "Estate Price Chart",
+					title: "Orders status",
 					data: data,
 					type: 'bar', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
 					height: 280,
-					colors: ['#7cd6fd', '#743ee2','#433ee2'],
+					colors: ['#7cd6fd', '#743ee2','#433ee2','orange','green'],
 					axisOptions: {
 						xAxisMode: "tick",
 						xIsSeries: true
