@@ -18,6 +18,10 @@ def contact_agent(**args):
 
 
 
+
+#code to send the orders data to the backend db n save it 
+# allows everyone to send the data
+
 @frappe.whitelist(allow_guest=True)
 def order_item(**args):
     try:
@@ -52,3 +56,55 @@ def order_item(**args):
     except Exception as e:
         frappe.local.response.http_status_code = 500
         return {"message": f"Server Error: {str(e)}", "status": "error"}
+    
+
+
+
+
+
+
+
+
+
+
+# code to send the indent data to the backend db n save it 
+# only allows the users who are logged in
+
+from frappe import _
+
+@frappe.whitelist(allow_guest=False)  # Only logged-in users can access
+def create_agency():
+    try:
+        # Get JSON data from the request body
+        data = frappe.request.get_json()
+        
+        # Extract fields
+        indentor = data.get("indentor")
+        inspection_agency = data.get("inspection_agency")
+        agency_code = data.get("agency_code")
+        agency_name = data.get("agency_name")
+        address = data.get("address")
+        state = data.get("state")
+
+        # Validate input (Optional)
+        if not all([indentor, inspection_agency, agency_code, agency_name, address, state]):
+            frappe.throw(_("Missing required fields"), frappe.ValidationError)
+
+        # Create Agency_master document
+        agency = frappe.get_doc({
+            "doctype": "Agency_master",
+            "indentor": indentor,
+            "inspection_agency": inspection_agency,
+            "agency_code": agency_code,
+            "agency_name": agency_name,
+            "address": address,
+            "state": state
+        })
+        agency.insert(ignore_permissions=True)  # Bypass permission restrictions if needed
+        frappe.db.commit()  # Commit the transaction
+
+        return {"message": "Agency created successfully!", "name": agency.name}
+    
+    except Exception as e:
+        frappe.log_error(frappe.get_traceback(), "Create Agency Error")  # Log the error
+        return {"error": str(e)}

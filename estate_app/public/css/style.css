@@ -1,0 +1,95 @@
+body {
+    font-family: 'Plus Jakarta Sans';
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #5a8447 !important;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+.logo-text {
+font-family: 'Poltawski Nowy', sans-serif;
+color: #fff;
+font-size: 32px;
+font-weight: 600;
+}
+
+header {
+  background: linear-gradient(to right, #377340, #054a49);
+  padding: 21px 60px 17px 60px;
+}
+.main {
+  min-height: calc(100vh - 256px);
+}
+.custom-label {
+  width: 115px;
+  font-size: 14px;
+}
+
+.customBtn {
+  background: #5a8447;
+  color: #fff !important;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+}
+
+.customBtn:hover {
+  background: #1d460d;
+}
+
+.header-nav {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.header-nav li:hover {
+  color: #ccc;
+}
+
+footer {
+  background: #1d460d;
+  padding: 20px 60px;
+  color: #fff;
+}
+
+footer li {
+  color: #fff;
+}
+
+footer li:hover {
+  color: #ccc;
+  cursor: pointer;
+}
