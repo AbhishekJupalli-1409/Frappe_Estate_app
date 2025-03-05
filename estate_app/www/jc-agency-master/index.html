@@ -1,0 +1,65 @@
+{% extends 'templates/pages/base.html' %}
+
+<!-- {% block head %}
+    <link rel="stylesheet" type="text/css" href="/assets/estate_app/css/jc-agency-master.css">
+{% endblock %} -->
+
+{% block jc_content %}
+<h4 class="text-center mt-3">Form on JC Agency Master</h4>
+
+<form class="mt-4 p-3 col-8 card m-auto jc-form" method="post" action="http://127.0.0.1:8000/new" id="agent">
+  <div class="d-flex justify-content-between mb-2">
+    <div class="">
+      <div class="d-flex gap-2 align-items-center">
+        <label class="custom-label"> Indentor </label>
+        <input type="text" value="" name="indentor"/>
+      </div>
+    </div>
+    <div class="">
+      <div class="d-flex gap-2">
+        <label class="custom-label"> Inspection Agency </label>
+        <input type="text" value="" name="inspection_agency"/>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between mb-2">
+    <div class="">
+      <div class="d-flex gap-2 align-items-center">
+        <label class="custom-label"> Agency Code </label>
+        <input type="text"  value="" name="agency_code"/>
+      </div>
+    </div>
+    <div class="">
+      <div class="d-flex gap-2">
+        <label class="custom-label"> Agency Name </label>
+        <input type="text" value="" name="agency_name"/>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between mb-2">
+    <div class="">
+      <div class="d-flex gap-2 align-items-center">
+        <label class="custom-label"> Address </label>
+        <input type="text" value="" name="address"/>
+      </div>
+    </div>
+    <div class="">
+      <div class="d-flex gap-2">
+        <label class="custom-label"> State </label>
+        <input type="text" value="" name="state"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center gap-2 mt-3">
+    <div class="d-flex gap-2">
+      <button class="customBtn">Cancel</button>
+      <button class="customBtn" type="submit">Apply Changes</button>
+    </div>
+  </div>
+</form>
+
+
+
+
+{% endblock %}

@@ -1,12 +1,23 @@
 body {
-    font-family: 'Plus Jakarta Sans';
+  font-family: "Poppins", sans-serif !important;
+  font-size: 15px;
+  background: #fdfffc;
 }
 
 h1,
 h2,
 h3,
-h4 {
-  color: #5a8447 !important;
+h4,
+p {
+  margin: 0;
+  padding: 0;
+}
+a{
+    text-decoration: none !important;
+}
+h1 {
+  font-size: 26px !important;
+  font-weight: 600 !important;
 }
 ul {
   margin: 0;
@@ -15,6 +26,10 @@ ul {
 
 ul li {
   list-style: none;
+}
+
+input{
+    height: 48px;
 }
 
 /* width */
@@ -38,15 +53,16 @@ ul li {
 }
 
 .logo-text {
-font-family: 'Poltawski Nowy', sans-serif;
-color: #fff;
-font-size: 32px;
-font-weight: 600;
+  font-family: "Poltawski Nowy", sans-serif;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 0 !important;
 }
 
-header {
-  background: linear-gradient(to right, #377340, #054a49);
-  padding: 21px 60px 17px 60px;
+header .top-nav{
+background: linear-gradient(to right, #377340, #054a49);
+  padding: 12px 30px;
 }
 .main {
   min-height: calc(100vh - 256px);
@@ -56,23 +72,54 @@ header {
   font-size: 14px;
 }
 
-.customBtn {
-  background: #5a8447;
+.pri-btn {
+  background: linear-gradient(to right, #377340, #054a49);
   color: #fff !important;
   border: none;
-  border-radius: 50px;
-  padding: 10px 20px;
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
 }
 
-.customBtn:hover {
+.pri-btn:hover {
   background: #1d460d;
+  font-weight: 600 !important;
+}
+
+.sec-btn {
+  background: #fff;
+  color: #145646 !important;
+  border: 1px solid #145646 !important;
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+.sec-btn:hover {
+  font-weight: 600 !important;
+}
+
+.filter-btn{
+    background: #F9F9F9;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    gap: 5px;
+    border: 1px solid #DFDFDF !important;
+}
+
+.filter-btn:hover {
+    font-weight: 600 !important;
 }
 
 .header-nav {
   color: #fff;
-  font-size: 16px;
-  text-transform: uppercase;
+  font-size: 15px;
   cursor: pointer;
+  font-weight: 400;
 }
 
 .header-nav li:hover {
@@ -92,4 +139,152 @@ footer li {
 footer li:hover {
   color: #ccc;
   cursor: pointer;
+}
+
+.dropdown-toggle {
+  background: transparent !important;
+  color: #000 !important;
+  font-size: 15px !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding-right: 33px !important;
+  text-align: left !important;
+  height: 48px;
+}
+
+.dropdown-toggle.active {
+  font-weight: 600 !important;
+}
+
+.dropdown-toggle .dropdown-item {
+  font-size: 15px;
+}
+
+.dropdown-toggle::after {
+  position: absolute;
+  top: 23px;
+  right: 15px;
+}
+
+.dropdown  .dropdown-item{
+    padding: 10px 12px !important;
+    font-size: 14px;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.form-control{
+    border: var(--bs-border-width) solid var(--bs-border-color) !important;
+    box-shadow: none !important;
+}
+
+.search{
+    position: relative;
+}
+
+.search img{
+    position: absolute;
+    left: 10px;
+    top: 13.5px;
+}
+
+.search input{
+    width: 250px;
+    padding-left: 36px;
+}
+
+.table{
+    border: 0.6px solid #EAECF0;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    border-collapse: separate !important;
+    border-spacing: 0;
+}
+
+.table thead{
+    background: #F2F9F9 !important;
+}
+
+.table th, table td{
+    padding: 12px !important;
+    min-height: 56px !important;
+    box-shadow: none !important;
+}
+
+.table th{
+    color: #0A4E48 !important;
+    background: #F2F9F9 !important;
+    font-weight: 500;
+}
+
+.table tbody tr:nth-child(even) td {
+    background: #F9FAFB !important;
+}
+
+.table tbody tr:nth-child(odd) td {
+    background: #fff !important;
+}
+
+.btm-nav {
+    border-bottom: 1px solid #e4e4e4;
+    padding: 5px 110px;
+}
+  
+
+.btm-nav button{
+    border: none !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.btm-nav .dropdown .dropdown-menu{
+    top: -8px !important;
+}
+
+.modal-dialog{
+    max-width: 950px !important;
+}
+
+.modal-footer{
+    border: none !important;
+    padding-top: 0 !important;
+}
+
+.modal-header{
+    border: none !important;
+    padding-bottom: 0 !important;
+}
+
+/* --- dashboard --*/
+
+.bg-wh {
+  background: #e9f6f2;
+  border-radius: 10px;
+  padding: 20px;
+  width: 40px;
+  height: 40px;
+}
+
+.bg-or {
+  background: #ea8528;
+  border-radius: 50%;
+  padding: 20px;
+  width: 40px;
+  height: 40px;
+}
+
+.or-text {
+  font-size: 14px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.dashboard-page {
+  padding: 20px 75px;
+}
+
+.dm-txt {
+  color: #606060;
 }
