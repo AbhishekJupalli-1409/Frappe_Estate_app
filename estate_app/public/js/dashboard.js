@@ -33,7 +33,7 @@ const data2 = {
 console.log("chart added");
 const chart2 = new frappe.Chart("#chart2", {  // or a DOM element,// new Chart() in case of ES6 module with above usagetitle: "My Awesome Chart",
     data: data2,
-    height:500,
+    height:400,
     type: 'pie', // or 'bar', 'line', 'scatter', 'pie', 'percentage'height: 250,
     colors: ['#7cd6fd', '#743ee2']
 })

@@ -15,6 +15,17 @@ p {
 a{
     text-decoration: none !important;
 }
+
+a {
+  color: inherit; /* Uses parent element's color */
+  text-decoration: none !important; /* Removes underline */
+}
+#nav_links {
+  color: #fff; /* Set your desired color */
+  text-decoration: none; /* Remove underline */
+}
+
+
 h1 {
   font-size: 26px !important;
   font-weight: 600 !important;
