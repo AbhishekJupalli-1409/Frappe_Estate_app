@@ -1,68 +1,68 @@
 {% extends 'templates/pages/base1.html' %} {% block dashboard %}
 {% block css %}
-<link
-      rel="stylesheet"
-      type="text/css"
-      href="/assets/estate_app/css/dashboard.css"
-    />
+<link rel="stylesheet" type="text/css" href="/assets/estate_app/css/dashboard.css" />
 {% endblock %}
 
 <div class="dashboard-page p-main">
-    <div class="d-flex justify-content-between align-items-center ">
-        <div class="d-flex flex-column gap-2">
-            <h1>Overview</h3>
-            <p class="dm-txt">
-              A dashboard is a visual snapshot of key metrics and insights for quick
-              analysis.
-            </p>
-          </div>
-        
-          <div class="">
-            <div class="d-flex gap-2">
-              <button class="sec-btn">Reset</button>
-              <button class="pri-btn" id="Generate">Generate</button>
-            </div>
-          </div>
+  <div class="d-flex justify-content-between align-items-center ">
+    <div class="d-flex flex-column gap-2">
+      <h1>Overview</h3>
+        <p class="dm-txt">
+          A dashboard is a visual snapshot of key metrics and insights for quick
+          analysis.
+        </p>
     </div>
-  
-<div class="d-flex gap-3 mt-3">
+
+    <div class="">
+      <div class="d-flex gap-2">
+        <button class="sec-btn">Reset</button>
+        <button class="pri-btn" id="Generate">Generate</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex gap-3 mt-3">
     <div class="d-flex flex-column align-items-start gap-2 col-2">
-        <label class="fw-medium">
-            Report
-        </label>
-        <div class="dropdown show w-100">
-            <a class="form-control dropdown-toggle w-100 d-flex align-items-center" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Report
-            </a>
-          
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">Select</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
+      <label class="fw-medium">
+        Report
+      </label>
+      <div class="dropdown show w-100">
+        <a class="form-control dropdown-toggle w-100 d-flex align-items-center" href="#" role="button"
+          id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Report
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#">Select</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
     </div>
 
     <div class="d-flex flex-column align-items-start gap-2 col-2">
-        <label class="fw-medium">
-            Time Period
-        </label>
-        <input type="date" class="form-control" placeholder="First name">
+      <label class="fw-medium">
+        Time Period
+      </label>
+      <input type="date" class="form-control" placeholder="First name">
     </div>
     <div class="d-flex flex-column align-items-start gap-2 col-2">
-        <label class="fw-medium" style="visibility: hidden;">
-            Time Period
-        </label>
-        <input type="date" class="form-control" placeholder="First name">
+      <label class="fw-medium" style="visibility: hidden;">
+        Time Period
+      </label>
+      <input type="date" class="form-control" placeholder="First name">
     </div>
-    
-</div>
+
+  </div>
 </div>
 <div style="padding: 20px 75px;">
   <div id="chart1"></div>
 </div>
 <div style="padding: 20px 75px;">
   <div id="chart2"></div>
+</div>
+<div style="padding: 20px 75px;">
+  <div id="chart3"></div>
 </div>
 
 
@@ -71,5 +71,5 @@
 
 
 {% block scripts %}
-  <script src="/assets/estate_app/js/dashboard.js"></script>
+<script src="/assets/estate_app/js/dashboard.js"></script>
 {% endblock %}

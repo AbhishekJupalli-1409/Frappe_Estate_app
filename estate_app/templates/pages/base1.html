@@ -51,10 +51,12 @@
             <img src="/assets/estate_app/img/reportIco.svg" />
             Reports
           </li>
+          <a id="nav_links" href="/app">
           <li class="d-flex align-items-center gap-1">
             <img src="/assets/estate_app/img/adminIco.svg" />
             Administrator
           </li>
+          </a>
         </ul>
       </div>
 
@@ -79,8 +81,8 @@
         </button>
         <div class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="/update-agency-info">Update Agency Information</a>
-          <a class="dropdown-item" href="#">Update Consignee Details</a>
-          <a class="dropdown-item" href="#">Consignee & Railhead Mapping List</a>
+          <a class="dropdown-item" href="/update-con-details">Update Consignee Details</a>
+          <a class="dropdown-item" href="/railhead-con-list">Consignee & Railhead Mapping List</a>
         </div>
       </div>
 
@@ -89,10 +91,11 @@
           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Intent & Allocation
         </button>
-        <div class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Update Agency Information</a>
-          <a class="dropdown-item" href="#">Update Consignee Details</a>
-          <a class="dropdown-item" href="#">Consignee & Railhead Mapping List</a>
+        <div class="dropdown-menu p-0 " aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/create-indent">Create Indent</a>
+          <a class="dropdown-item" href="#">Indent PCSO Allocation List</a>
+          <a class="dropdown-item" href="#">Indent Detail Status</a>
+          <a class="dropdown-item" href="#">Indent Payment History</a>
         </div>
       </div>
 
@@ -102,9 +105,10 @@
           Billing & Tax Reports
         </button>
         <div class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Update Agency Information</a>
-          <a class="dropdown-item" href="#">Update Consignee Details</a>
-          <a class="dropdown-item" href="#">Consignee & Railhead Mapping List</a>
+          <a class="dropdown-item" href="#">Monthly Cost Sheet</a>
+          <a class="dropdown-item" href="#">GST Entry</a>
+          <a class="dropdown-item" href="#">TDS Report</a>
+          <a class="dropdown-item" href="#">TDS194Q Report</a>
         </div>
       </div>
 
@@ -114,9 +118,9 @@
           ICall & Refiund Management
         </button>
         <div class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Update Agency Information</a>
-          <a class="dropdown-item" href="#">Update Consignee Details</a>
-          <a class="dropdown-item" href="#">Consignee & Railhead Mapping List</a>
+          <a class="dropdown-item" href="#">Confirmed ICALL List</a>
+          <a class="dropdown-item" href="#">Enter Bank Details for Refund</a>
+          <a class="dropdown-item" href="#">Online Confirmation of CRC</a>
         </div>
       </div>
 
@@ -126,9 +130,8 @@
           Compliance & E Way
         </button>
         <div class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Update Agency Information</a>
-          <a class="dropdown-item" href="#">Update Consignee Details</a>
-          <a class="dropdown-item" href="#">Consignee & Railhead Mapping List</a>
+          <a class="dropdown-item" href="#">Complain Entry</a>
+          <a class="dropdown-item" href="#">List of EWAY Bill</a>
         </div>
       </div>
     </div>
@@ -139,6 +142,7 @@
     {% block dashboard %} {% endblock %}
     {% block con_details %}{% endblock %}
     {% block railhead_con_list %}{% endblock %}
+    {% block create_intent %}{% endblock %}
   </div>
 
 

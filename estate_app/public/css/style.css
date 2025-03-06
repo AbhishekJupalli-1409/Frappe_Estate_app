@@ -119,7 +119,7 @@ background: linear-gradient(to right, #377340, #054a49);
 .filter-btn{
     background: #F9F9F9;
     border-radius: 8px !important;
-    padding: 10px 20px !important;
+    padding: 13px 20px !important;
     font-size: 14px !important;
     font-weight: 500 !important;
     gap: 5px;
@@ -260,6 +260,8 @@ footer li:hover {
 
 .modal-dialog{
     max-width: 950px !important;
+    max-height: 92vh;
+    overflow: auto;
 }
 
 .modal-footer{
@@ -283,6 +285,10 @@ footer li:hover {
 
 .w-cust{
   min-width: 300px;
+}
+
+.w-cust-sm{
+  min-width: 150px;
 }
 
 .bg-wh {
@@ -309,5 +315,23 @@ footer li:hover {
 
 
 .dropdown-item.active, .dropdown-item:active{
-  background: #F2F9F9 !important;
+  background: linear-gradient(to right, #377340, #054a49) !important;
+  color: #fff !important;
+}
+
+.modal-content{
+  padding: 10px;
+}
+
+table{
+  margin: 0 !important;
+}
+
+.dropdown-menu.show {
+  display: block;
+  width: 100%;
+}
+
+.btn-close{
+  box-shadow: none !important;
 }
