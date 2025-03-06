@@ -46,6 +46,7 @@ input{
 /* width */
 ::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 
 /* Track */
@@ -275,7 +276,14 @@ footer li:hover {
   padding: 20px 75px;
 }
 
-/* --- dashboard --*/
+.link-clr{
+  color:#007AFF;
+}
+
+
+.w-cust{
+  min-width: 300px;
+}
 
 .bg-wh {
   background: #e9f6f2;
@@ -299,10 +307,7 @@ footer li:hover {
   color: #fff;
 }
 
-.dashboard-page {
-  padding: 20px 75px;
-}
 
-.dm-txt {
-  color: #606060;
+.dropdown-item.active, .dropdown-item:active{
+  background: #F2F9F9 !important;
 }

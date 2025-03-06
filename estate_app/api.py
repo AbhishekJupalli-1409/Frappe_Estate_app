@@ -184,3 +184,23 @@ def create_jc_agency():
         return {"error": str(e)}
 
 
+
+
+
+
+
+# code to get the workflow state and count of the workflow state
+
+@frappe.whitelist(allow_guest=False)  # Only logged-in users can access
+def get_workflow_state():
+    try:
+
+        
+        # Extract fields
+       
+        data = frappe.db.sql(f"select workflow_state,count(workflow_state) as count from `tabJC Agency Master` group by workflow_state ",as_dict=True)
+        print(f"\n\n\n\n{data}\n\n\n")
+        return data
+    
+    except Exception as e:
+        frappe.log_error(frappe.get_traceback(), "Get Workflow State Count Error")
