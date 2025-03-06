@@ -190,8 +190,9 @@ def create_jc_agency():
 
 
 # code to get the workflow state and count of the workflow state
-
-@frappe.whitelist(allow_guest=False)  # Only logged-in users can access
+# inbund - private n public
+# outbund -  public  = guest = true
+@frappe.whitelist()  # Only logged-in users can access
 def get_workflow_state():
     try:
 

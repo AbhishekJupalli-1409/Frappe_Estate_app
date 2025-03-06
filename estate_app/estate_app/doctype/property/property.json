@@ -53,8 +53,10 @@
    "reqd": 1
   },
   {
+   "fetch_from": "city.title",
    "fieldname": "agent",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Agent",
    "options": "Agent"
   },
@@ -63,6 +65,7 @@
    "fetch_if_empty": 1,
    "fieldname": "agent_name",
    "fieldtype": "Read Only",
+   "in_standard_filter": 1,
    "label": "Agent Name",
    "options": "Agent"
   },
@@ -136,7 +139,7 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-07 17:53:41.101281",
+ "modified": "2025-03-06 18:14:07.652505",
  "modified_by": "Administrator",
  "module": "Estate App",
  "name": "Property",
