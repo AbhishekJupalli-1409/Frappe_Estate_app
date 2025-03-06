@@ -91,11 +91,14 @@ background: linear-gradient(to right, #377340, #054a49);
   padding: 10px 20px !important;
   font-size: 14px !important;
   font-weight: 500 !important;
+  transition: all 0.3s ease;
+  
 }
 
 .pri-btn:hover {
-  background: #1d460d;
-  font-weight: 600 !important;
+  background: linear-gradient(to right, #275d2f, #022e2e);
+  
+  transition: all 0.3s ease;
 }
 
 .sec-btn {
@@ -266,6 +269,10 @@ footer li:hover {
 .modal-header{
     border: none !important;
     padding-bottom: 0 !important;
+}
+
+.p-main{
+  padding: 20px 75px;
 }
 
 /* --- dashboard --*/

@@ -107,58 +107,58 @@
                 <h5 class="modal-title" id="exampleModalLabel">Form on JC Agency Master</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <form class="modal-body" id="form" action="/update-agency-info">
                <div class="d-flex gap-2">
                 <div class="col-4" style="border: 1px solid #EAECF0; border-radius: 8px; padding: 12px;">
                     <div class="d-flex flex-column align-items-start gap-2 mb-2">
                         <label class="fw-medium">
                             Indentor First Name
                         </label>
-                        <input type="text" class="form-control" placeholder="First name">
+                        <input type="text" class="form-control" id="indentor_first_name" name="indentor_first_name" placeholder="First name">
                     </div>
 
                     <div class="d-flex flex-column align-items-start gap-2 mb-2">
                         <label class="fw-medium">
                             Indentor Last Name
                         </label>
-                        <input type="text" class="form-control" placeholder="Last name">
+                        <input type="text" class="form-control" id="indentor_last_name" name="indentor_last_name" placeholder="Last name">
                     </div>
                     <div class="d-flex flex-column align-items-start gap-2 mb-2">
                         <label class="fw-medium">
                             Agency Code
                         </label>
-                        <input type="text" class="form-control" placeholder="Agency Code">
+                        <input type="text" class="form-control" id="agency_code"  name="agency_code" placeholder="Agency Code">
                     </div>
                     <div class="d-flex flex-column align-items-start gap-2 mb-2">
                         <label class="fw-medium">
                             Agency Name
                         </label>
-                        <input type="text" class="form-control" placeholder="Agency Name">
+                        <input type="text" class="form-control" id="agency_name"  name="agency_name" placeholder="Agency Name">
                     </div>
 
                     <div class="d-flex flex-column align-items-start gap-2 mb-2">
                         <label class="fw-medium">
                             Pan No.
                         </label>
-                        <input type="text" class="form-control" placeholder="Pan No.">
+                        <input type="text" class="form-control" id="pan_no" name="pan_no" placeholder="Pan No.">
                     </div>
                         <div class="d-flex flex-column align-items-start gap-2 mb-2">
                             <label class="fw-medium">
                                 Tan No.
                             </label>
-                            <input type="text" class="form-control" placeholder="Tan No.">
+                            <input type="text" class="form-control" id="tan_no" name="tan_no" placeholder="Tan No.">
                         </div>
                         <div class="d-flex flex-column align-items-start gap-2 mb-2">
                             <label class="fw-medium">
                                 GST
                             </label>
-                            <input type="text" class="form-control" placeholder="GST">
+                            <input type="text" class="form-control" id="gst" name="gst" placeholder="GST">
                         </div>
                         <div class="d-flex flex-column align-items-start gap-2 mb-2">
                             <label class="fw-medium">
                                 TDS GST
                             </label>
-                            <input type="text" class="form-control" placeholder="TDS GST">
+                            <input type="text" class="form-control" id="tds_gst" name="tds_gst" placeholder="TDS GST">
                         </div>
                 </div>
                 <div class="col-8" style="border: 1px solid #EAECF0; border-radius: 8px; padding: 12px;">
@@ -167,13 +167,13 @@
                             <label class="fw-medium">
                                 Address 1
                             </label>
-                            <input type="text" class="form-control" placeholder="Address 1">
+                            <input type="text" class="form-control" id="address_1" name="address_1" placeholder="Address 1">
                         </div>
                         <div class="d-flex flex-column align-items-start gap-2 w-50">
                             <label class="fw-medium">
                                 Address 2
                             </label>
-                            <input type="text" class="form-control" placeholder="Address 2">
+                            <input type="text" class="form-control" id="address_2" name="address_2" placeholder="Address 2">
                         </div>
     
                     </div>
@@ -183,13 +183,13 @@
                             <label class="fw-medium">
                                 City
                             </label>
-                            <input type="text" class="form-control" placeholder="City">
+                            <input type="text" class="form-control" id="city" name="city" placeholder="City">
                         </div>
                         <div class="d-flex flex-column align-items-start gap-2 w-50">
                             <label class="fw-medium">
                                 State
                             </label>
-                            <input type="text" class="form-control" placeholder="State">
+                            <input type="text" class="form-control" id="state" name="state" placeholder="State">
                         </div>
                     </div>
                     <div class="d-flex mb-4 gap-2 ">
@@ -197,14 +197,14 @@
                             <label class="fw-medium">
                                 Pin
                             </label>
-                            <input type="text" class="form-control" placeholder="Pin">
+                            <input type="text" class="form-control" id="pin" name="pin" placeholder="Pin">
                         </div>
     
                         <div class="d-flex flex-column align-items-start gap-2 w-50">
                             <label class="fw-medium">
                                 Branding Req.
                             </label>
-                            <input type="text" class="form-control" placeholder="Branding Req.">
+                            <input type="text" class="form-control" id="branding_req" name="branding_req" placeholder="Branding Req.">
                         </div>
                     </div>
                     <div class="d-flex mb-4 gap-2 ">
@@ -212,14 +212,14 @@
                             <label class="fw-medium">
                                 Email
                             </label>
-                            <input type="text" class="form-control" placeholder="Email">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
                         </div>
     
                         <div class="d-flex flex-column align-items-start gap-2 w-50">
                             <label class="fw-medium">
                                 Phone
                             </label>
-                            <input type="text" class="form-control" placeholder="Phone">
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone">
                         </div>
                     </div>
                     <div class="d-flex mb-4 gap-2 ">
@@ -227,14 +227,14 @@
                             <label class="fw-medium">
                                 Mobile 1
                             </label>
-                            <input type="text" class="form-control" placeholder="Mobile 1">
+                            <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile 1">
                         </div>
     
                         <div class="d-flex flex-column align-items-start gap-2 w-50">
                             <label class="fw-medium">
                                 Fax
                             </label>
-                            <input type="text" class="form-control" placeholder="Fax">
+                            <input type="text" class="form-control"  id="fax"  name="fax" placeholder="Fax">
                         </div>
                     </div>
                     <div class="d-flex mb-4 gap-2">
@@ -242,14 +242,14 @@
                             <label class="fw-medium">
                                 Contact Person
                             </label>
-                            <input type="text" class="form-control" placeholder="Contact Person">
+                            <input type="text" class="form-control" id="contact_person" name="contact_person" placeholder="Contact Person">
                         </div>
     
                         <div class="d-flex flex-column align-items-start gap-2 w-50">
                             <label class="fw-medium">
                                 Contact Person Phone
                             </label>
-                            <input type="text" class="form-control" placeholder="Contact Person Phone">
+                            <input type="text" class="form-control" id="contact_person_phone" name="contact_person_phone" placeholder="Contact Person Phone">
                         </div>
                     </div>
                     <div class="d-flex mb-4 gap-2 ">
@@ -257,25 +257,32 @@
                             <label class="fw-medium">
                                 GST Contact Person
                             </label>
-                            <input type="text" class="form-control" placeholder="GST Contact Person">
+                            <input type="text" class="form-control" id="gst_contact_person" name="gst_contact_person" placeholder="GST Contact Person">
                         </div>
     
                         <div class="d-flex flex-column align-items-start gap-2 w-50">
                             <label class="fw-medium">
                                 GST Contact Person No.
                             </label>
-                            <input type="text" class="form-control" placeholder="GST Contact Person No.">
+                            <input type="text" class="form-control" id="gst_contact_person_no" name="gst_contact_person_no" placeholder="GST Contact Person No.">
                         </div>
                     </div>
                 </div>
                </div>
+               <div class="modal-footer">
+                <button type="button" class="btn sec-btn mt-3" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn pri-btn mt-3">Create</button>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn sec-btn" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn pri-btn">Create</button>
-            </div>
+            </form>
+            
         </div>
     </div>
 </div>
 
+{% endblock %}
+
+
+{% block scripts %}
+  
+  <script src="/assets/estate_app/js/update_agency_info/script.js"></script>
 {% endblock %}
