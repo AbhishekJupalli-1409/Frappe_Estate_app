@@ -1,0 +1,183 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "INDT.#######",
+ "creation": "2025-03-06 12:05:28.759747",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_h3m5",
+  "indentor_first_name",
+  "indentor_last_name",
+  "agency_code",
+  "agency_name",
+  "pan_no",
+  "tan_no",
+  "gst",
+  "tds_gst",
+  "address_1",
+  "address_2",
+  "city",
+  "state",
+  "pin",
+  "branding_req",
+  "email",
+  "phone",
+  "mobile",
+  "fax",
+  "contact_person",
+  "contact_person_phone",
+  "gst_contact_person",
+  "gst_contact_person_no"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_h3m5",
+   "fieldtype": "Section Break",
+   "label": "Jc Agency Details"
+  },
+  {
+   "fieldname": "indentor_last_name",
+   "fieldtype": "Data",
+   "label": "Indentor Last Name"
+  },
+  {
+   "fieldname": "agency_code",
+   "fieldtype": "Data",
+   "label": "Agency Code"
+  },
+  {
+   "fieldname": "agency_name",
+   "fieldtype": "Data",
+   "label": "Agency Name"
+  },
+  {
+   "fieldname": "pan_no",
+   "fieldtype": "Data",
+   "label": "Pan No"
+  },
+  {
+   "fieldname": "tan_no",
+   "fieldtype": "Data",
+   "label": "Tan No"
+  },
+  {
+   "fieldname": "gst",
+   "fieldtype": "Data",
+   "label": "GST"
+  },
+  {
+   "fieldname": "tds_gst",
+   "fieldtype": "Data",
+   "label": "Tds Gst"
+  },
+  {
+   "fieldname": "address_1",
+   "fieldtype": "Data",
+   "label": "Address 1"
+  },
+  {
+   "fieldname": "address_2",
+   "fieldtype": "Data",
+   "label": "Address 2"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "pin",
+   "fieldtype": "Data",
+   "label": "Pin"
+  },
+  {
+   "fieldname": "branding_req",
+   "fieldtype": "Data",
+   "label": "Branding Req"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile"
+  },
+  {
+   "fieldname": "fax",
+   "fieldtype": "Data",
+   "label": "Fax"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "fieldname": "contact_person_phone",
+   "fieldtype": "Data",
+   "label": "Contact Person Phone"
+  },
+  {
+   "fieldname": "gst_contact_person",
+   "fieldtype": "Data",
+   "label": "GST Contact Person"
+  },
+  {
+   "fieldname": "gst_contact_person_no",
+   "fieldtype": "Data",
+   "label": "GST Contact Person No"
+  },
+  {
+   "fieldname": "indentor_first_name",
+   "fieldtype": "Data",
+   "label": "Indentor First Name",
+   "no_copy": 1,
+   "options": "JC Agency Master",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-03-06 12:21:24.062793",
+ "modified_by": "Administrator",
+ "module": "Estate App",
+ "name": "JC Agency Master",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
